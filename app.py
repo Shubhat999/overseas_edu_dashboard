@@ -8,7 +8,7 @@ import numpy as np
 from scipy.interpolate import make_interp_spline
 
 # Sample Data (Replace with your full dataset)
-df = pd.read_excel(r"Data\.ipynb_checkpoints\Indian_students_stats_country-wise.xlsx")
+df = pd.read_excel(r"Indian_students_stats_country-wise.xlsx")
 df = df.iloc[:, :7]
 df = pd.melt(df, id_vars=["Sl. No.", "Country"], var_name="Year", value_name="Value")
 df["Year"] = pd.to_datetime(df["Year"], format="%Y")
@@ -458,7 +458,7 @@ df = calculate_growth_rate(df)
 # Initialize Dash App with Bootstrap dark theme
 external_stylesheets = [
     "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap",
-    "/assets/styles.css",
+    "/styles.css",
 ]
 
 # Initialize Dash app
@@ -470,7 +470,7 @@ app.layout = html.Div(
         html.Div(
             [
                 html.Img(
-                    src="/assets/logo.png",  # Replace with the actual path to your logo
+                    src="logo.png",  # Replace with the actual path to your logo
                     style={
                         "height": "80px",  # Adjust the height as needed
                         "margin-bottom": "20px",
