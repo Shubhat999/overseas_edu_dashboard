@@ -1032,6 +1032,9 @@ def update_charts(diversity_country, gsmi_country):
     return diversity_fig, gsmi_fig
 
 
-# Run the app
-if __name__ == "__main__":
-    app.run_server(debug=True)
+if __name__ == '__main__':
+    # Get the PORT from the environment variables (default to 8050 if not set)
+    port = int(os.environ.get("PORT", 5000))
+    # Run the server on the correct port and bind to 0.0.0.0
+    app.run_server(debug=True, host="0.0.0.0", port=port)
+
